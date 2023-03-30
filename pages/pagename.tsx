@@ -1,4 +1,4 @@
-import { Card, Page, Layout, TextContainer, Text } from "@shopify/polaris";
+import { AlphaCard, Page, Layout, AlphaStack, Text } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 
 export default function PageName() {
@@ -19,30 +19,32 @@ export default function PageName() {
       />
       <Layout>
         <Layout.Section>
-          <Card sectioned>
+          <AlphaCard>
             <Text variant="headingMd" as="h2">
               Heading
             </Text>
-            <TextContainer>
+            <AlphaStack>
               <p>Body</p>
-            </TextContainer>
-          </Card>
-          <Card sectioned>
+            </AlphaStack>
+          </AlphaCard>
+          <AlphaCard>
             <Text variant="headingMd" as="h2">
               Heading
             </Text>
-            <TextContainer>
+            <AlphaStack>
               <p>Body</p>
-            </TextContainer>
-          </Card>
+            </AlphaStack>
+          </AlphaCard>
         </Layout.Section>
         <Layout.Section secondary>
-          <Card sectioned>
-            <Heading>Heading</Heading>
-            <TextContainer>
+          <AlphaCard>
+            <Text variant="headingMd" as="h2">
+              Heading
+            </Text>
+            <AlphaStack>
               <p>Body</p>
-            </TextContainer>
-          </Card>
+            </AlphaStack>
+          </AlphaCard>
         </Layout.Section>
       </Layout>
     </Page>

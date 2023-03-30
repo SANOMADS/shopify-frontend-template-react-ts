@@ -6,7 +6,9 @@ import {
   AppBridgeProvider,
   QueryProvider,
   PolarisProvider,
-} from "./components";
+} from "./providers";
+import { LoadingIndicator } from "./components/LoadingIndicator";
+import { ShopContextProvider } from "./hooks";
 
 export default function App() {
   // Any .tsx or .jsx files in /pages will become a route
@@ -18,6 +20,8 @@ export default function App() {
       <BrowserRouter>
         <AppBridgeProvider>
           <QueryProvider>
+            <ShopContextProvider>
+            <LoadingIndicator />
             <NavigationMenu
               navigationLinks={[
                 {
@@ -27,6 +31,7 @@ export default function App() {
               ]}
             />
             <Routes pages={pages} />
+          </ShopContextProvider>
           </QueryProvider>
         </AppBridgeProvider>
       </BrowserRouter>
