@@ -5,7 +5,11 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "coverage": "vitest run --coverage"
+    "test": "vitest --reporter=verbose",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "pretty": "prettier --write ."
   },
   "type": "module",
   "engines": {
