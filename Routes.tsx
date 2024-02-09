@@ -4,7 +4,7 @@ import { ComponentType } from "react";
 export type Route = {
   [key: string]: ComponentType;
 };
-type Pages = Record<string, Route>;
+export type Pages = Record<string, Route>;
 
 /**
  * File-based routing.

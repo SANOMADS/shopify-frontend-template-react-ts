@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { NavigationMenu } from "@shopify/app-bridge-react";
-import Routes from "./Routes";
+import Routes, { Pages } from "./Routes";
 
 import {
   AppBridgeProvider,
@@ -13,7 +14,9 @@ import { ShopContextProvider } from "./hooks";
 export default function App() {
   // Any .tsx or .jsx files in /pages will become a route
   // See documentation for <Routes /> for more info
-  const pages = import.meta.globEager("./pages/**/!(*.test.[jt]sx)*.([jt]sx)");
+  // const importMeta: any = import.meta;
+  const pages: Pages = import.meta.glob("./pages/**/!(*.test.[jt]sx)*.([jt]sx)", { eager: true });
+  const { t } = useTranslation();
 
   return (
     <PolarisProvider>
@@ -25,7 +28,7 @@ export default function App() {
             <NavigationMenu
               navigationLinks={[
                 {
-                  label: "Page name",
+                  label: t("NavigationMenu.pageName"),
                   destination: "/pagename",
                 },
               ]}

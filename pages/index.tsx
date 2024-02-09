@@ -2,9 +2,9 @@ import {
   Card,
   Page,
   Layout,
-  TextContainer,
+  Box,
   Image,
-  Stack,
+  InlineStack,
   Link,
   Text,
 } from "@shopify/polaris";
@@ -20,32 +20,31 @@ export default function HomePage() {
       <TitleBar title="App name" primaryAction={null} />
       <Layout>
         <Layout.Section>
-          <Card sectioned>
-            <Stack
+          <Card>
+            <InlineStack
               wrap={false}
-              spacing="extraTight"
-              distribution="trailing"
-              alignment="center"
+              gap="025"
+              align="center"
             >
-              <Stack.Item fill>
-                <TextContainer spacing="loose">
+              <>
+                <Box>
                   <Text as="h2" variant="headingMd">
                     Nice work on building a Shopify app 🎉
                   </Text>
                   <p>
                     Your app is ready to explore! It contains everything you
                     need to get started including the{" "}
-                    <Link url="https://polaris.shopify.com/" external>
+                    <Link url="https://polaris.shopify.com/" target="_blank">
                       Polaris design system
                     </Link>
                     ,{" "}
-                    <Link url="https://shopify.dev/api/admin-graphql" external>
+                    <Link url="https://shopify.dev/api/admin-graphql" target="_blank">
                       Shopify Admin API
                     </Link>
                     , and{" "}
                     <Link
                       url="https://shopify.dev/apps/tools/app-bridge"
-                      external
+                      target="_blank"
                     >
                       App Bridge
                     </Link>{" "}
@@ -59,15 +58,15 @@ export default function HomePage() {
                     Learn more about building out your app in{" "}
                     <Link
                       url="https://shopify.dev/apps/getting-started/add-functionality"
-                      external
+                      target="_blank"
                     >
                       this Shopify tutorial
                     </Link>{" "}
                     📚{" "}
                   </p>
-                </TextContainer>
-              </Stack.Item>
-              <Stack.Item>
+                </Box>
+              </>
+              <>
                 <div style={{ padding: "0 20px" }}>
                   <Image
                     source={trophyImage}
@@ -75,8 +74,8 @@ export default function HomePage() {
                     width={120}
                   />
                 </div>
-              </Stack.Item>
-            </Stack>
+              </>
+            </InlineStack>
           </Card>
         </Layout.Section>
         <Layout.Section>
